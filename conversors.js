@@ -300,4 +300,89 @@ function binaryToOctal(binary_number_received){
 
 }
 
+//Os parâmetros dessa função devem ser fornecidos em formato de string, contendo apenas 0 e 1 como algarismos
+//Ela retorna uma string
+function binaryToHexadecimal(binary_number_received){
+    let binary = binary_number_received.split("")
+    let binary_ready_for_conversion = []
+    let hexadecimal = []
+    let hexadecimal_string =""
+
+    while ((binary.length<4)) {
+        binary.unshift("0")
+    }
+    while(binary.length%4 !=0){
+        binary.unshift("0")
+    }
+
+
+    for(let  i=0;i<binary.length;i+=4){
+        binary_ready_for_conversion.push(binary[i]+binary[i+1]+binary[i+2]+binary[i+3])
+    }
+
+    for(i=0;i<binary_ready_for_conversion.length;i++){
+        switch(binary_ready_for_conversion[i]){
+            case "0000":
+                hexadecimal.push("0")
+                break
+            case "0001":
+                hexadecimal.push("1")
+                break
+            case "0010":
+                hexadecimal.push("2")
+                break
+            case "0011":
+                hexadecimal.push("3")
+                break
+            case "0100":
+                hexadecimal.push("4")
+                break
+            case "0101":
+                hexadecimal.push("5")
+                break
+            case "0110":
+                hexadecimal.push("6")
+                break
+            case "0111":
+                hexadecimal.push("7")
+                break
+            case "1000":
+                hexadecimal.push("8")
+                break
+            case "1001":
+                hexadecimal.push("9")
+                break
+            case "1010":
+                hexadecimal.push("A")
+                break
+            case "1011":
+                hexadecimal.push("B")
+                break
+            case "1100":
+                hexadecimal.push("C")
+                break
+            case "1101":
+                hexadecimal.push("D")
+                break
+            case "1110":
+                hexadecimal.push("E")
+                break
+            case "1111":
+                hexadecimal.push("F")
+                break
+            
+            }
+         }
+
+         while (hexadecimal[0]=="0") {
+             hexadecimal.shift()
+         }
+
+         hexadecimal_string=hexadecimal.join("")
+
+         return hexadecimal_string
+    
+}
+
+
 
