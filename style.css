@@ -1,37 +1,7 @@
-body{
-    background-color: #E5E4E5;
+input[type="radio"] {
+    margin-left: 0.5em;
 }
 
-/*nav{
-    background-color: #404040;
-    height: 100px ;
-    margin-top: -25px;
-    margin-left: -20px;
-    margin-right: -20px;
-    vertical-align: middle;
-
-}
-
-nav h1{
-    color: #FFFEFF;
-}*/
-
-
-
-#texto-topo{
-    color: #FFFEFF;
-
-    font-size: 70px;
-}
-
-#nav-container{
-    background-color: #404040;
-}
-
-#container-before{
-    background-color: #BFBEBF;
-}
-
-#container-later{
-    background-color: #BFBEBF;
+header {
+    text-align: center;
 }
