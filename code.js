@@ -95,7 +95,8 @@ function prepareConversion(input_number,inicial_basis,final_basis){
             break
     }
 
-    console.log(result)
+    showResults(result)
+
 }
 
 
