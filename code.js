@@ -15,6 +15,7 @@ function startLoadPage(){
 
 function startConversion(){
     let input_number = document.getElementById("num-converter").value
+    input_number=input_number.toUpperCase()
     
     let choices = [];
     let els = document.getElementsByName('radio-before');
