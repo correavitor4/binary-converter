@@ -1,141 +1,115 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <script src="conversors.js"></script>
-    <title>Document</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-</head>
-<body>
-
-    <header >
-        <div class="container-fluid" id="nav-container">
-            <div class="row h-100">
-                <div class="col-12" >
-                    <div class="text-center font-weight-bold h-100" id="texto-topo">
-                        Conversora de bases numéricas
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="style.css">
+        <script src="conversors.js"></script>
+        <title>Conversor de bases númericas</title>
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
+            />
+    </head>
+    <body>
+        <header class="hero is-small is-link">
+            <div class="hero-body">
+                <h1 class="title is-spaced">Conversora de bases numéricas</h1>
+                <p class="subtitle">Manipule números de bases binárias, decimais, hexadecimais e octais!</p>
+            </div>
+        </header>
+        <main class="section">
+            <div class="columns">
+                <div class="column">
+                    <div class="box">
+                        <div class="field">
+                            <label for="num-converter" class="label">Digite o
+                                número a ser convertido</label>
+                            <div class="control">
+                                <input
+                                    type="text"
+                                    class="input is-rounded"
+                                    id="num-converter"
+                                    autofocus
+                                    placeholder="e.g. 0000011111100101"
+                                    />
+                            </div>
+                        </div>
+                        <button class="button is-link mt-4 is-rounded">Converter</button>
+                    </div>
+                    <div class="box">
+                        <p class="label">De:</p>
+                        <div class="control mt-2">
+                            <input type="radio" name="radio-before"
+                                id="binary-radio-before"
+                                value="binary">
+                            <label class="radio"
+                                for="binary-radio-before">Binário</label>
+                            <input type="radio"
+                                name="radio-before"
+                                id="decimal-radio-before"
+                                value="decimal">
+                            <label class="radio"
+                                for="decimal-radio-before">Decimal</label>
+                            <input type="radio"
+                                name="radio-before"
+                                id="hexadecimal-radio-before"
+                                value="hexadecimal">
+                            <label class="radio"
+                                for="hexadecimal-radio-before">Hexadecimal</label>
+                            <input type="radio"
+                                name="radio-before"
+                                id="octal-radio-before"
+                                value="octal">
+                            <label class="radio"
+                                for="octal-radio-before">Octal</label>
+                        </div>
+                        <p class="mt-2 label">Para:</p>
+                        <div class="control mt-2">
+                            <input type="radio"
+                                name="inlineRadioOptions"
+                                id="binary-radio-later"
+                                value="binary">
+                            <label class="radio"
+                                for="binary-radio-later">Binário</label>
+                            <input type="radio"
+                                name="inlineRadioOptions"
+                                id="decimal-radio-later"
+                                value="decimal">
+                            <label class="radio"
+                                for="decimal-radio-later">Decimal</label>
+                            <input type="radio"
+                                name="inlineRadioOptions"
+                                id="hexadecimal-radio-later"
+                                value="hexadecimal">
+                            <label class="radio"
+                                for="hexadecimal-radio-later">Hexadecimal</label>
+                            <input type="radio"
+                                name="inlineRadioOptions"
+                                id="octal-radio-later"
+                                value="octal">
+                            <label class="radio"
+                                for="octal-radio-later">Octal</label>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <p>Número convertido = </p>
                     </div>
                 </div>
             </div>
-        </div>
-    </header>
-
-    <div class="container">
-        <div class="row">
-            <div class="col-6">
-                <div class="container" id="container-before">
-                    <div class="row">
-                        <p></p>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-12">
-                            <p class="col-12">Digite aqui o número a ser convertido</p>
-                            
-                        </div>
-                        
-                    </div>
-
-                     <div class="row">
-                        <div class="col-8">
-                            <input class="col-12" type="text" name="" id="input-before" >
-                        </div>
-                        <div class="col-4">
-                            <button class="col-12" >
-                                Calcular
-                            </button>
-                        </div>
-                        
-                    </div>
-
-                    <div class="row">
-                        <div class="container">
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="radio-before" id="binary-radio-before" value="binary" >
-                                <label class="form-check-label" for="binary-radio-before">binário</label>
-                            </div>
-
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="radio-before" id="decimal-radio-before" value="decimal">
-                                <label class="form-check-label" for="decimal-radio-before">decimal</label>
-                            </div>
-                            
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="radio-before" id="hexadecimal-radio-before" value="hexadecimal" >
-                                <label class="form-check-label" for="hexadecimal-radio-before">hexadecimal</label>
-                            </div>
-
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="radio-before" id="octal-radio-before" value="octal" >
-                                <label class="form-check-label" for="octal-radio-before">octal</label>
-                            </div>
-                        </div>
-                        
-                       
-                    </div>
-
-                    <div class="row">
-                        <p></p>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="col-12">Converter para:</div>
-                        </div>
-                        
-                    </div>
-
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="binary-radio-later" value="binary" >
-                                <label class="form-check-label" for="binary-radio-later">binário</label>
-                            </div>
-                            
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="decimal-radio-later" value="decimal">
-                                <label class="form-check-label" for="decimal-radio-later">decimal</label>
-                            </div>
-                            
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="hexadecimal-radio-later" value="hexadecimal" >
-                                <label class="form-check-label" for="hexadecimal-radio-later">hexadecimal</label>
-                            </div>
-
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="octal-radio-later" value="octal" >
-                                <label class="form-check-label" for="octal-radio-later">octal</label>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    
-                </div>
-            </div>
-            <div class="col-6">
-                <div class="container" id="container-later">
-                    <div class="row">
-                       Número convertido
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-    </div>
-
-
-
-
-
-
-
-
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-</body>
+        </main>
+        <script
+            src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+            crossorigin="anonymous"></script>
+        <script
+            src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+            integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+            crossorigin="anonymous"></script>
+    </body>
 </html>
