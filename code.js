@@ -1,3 +1,107 @@
+inicial_basis = ""
+final_basis = ""
+btn_converter =document.getElementById("btn-converter")
+
+
+
+onload(startLoadPage())
+
+function startLoadPage(){
+    console.log("Carregamento do JavaScript da página iniciado")
+   
+
+}
+
+
+function startConversion(){
+    let input_number = document.getElementById("num-converter").value
+    
+    let choices = [];
+    let els = document.getElementsByName('radio-before');
+    for (var i=0;i<els.length;i++){
+        if ( els[i].checked ) {
+            inicial_basis=els[i].value
+        }
+    }
+
+
+    choices=[]
+    els=document.getElementsByName("inlineRadioOptions")
+    for(var i=0;i<els.length;i++){
+        if ( els[i].checked ) {
+            final_basis=els[i].value
+        }
+    }
+
+    if(input_number==""){
+        alert("Você não digitou nenhum número!")
+    }
+    else if(inicial_basis==""){
+        alert("Você não especificou a base numérica de entrada!")
+    }
+    else if(final_basis==""){
+        alert("Você não especificou a base numérica de saída!")
+    }
+
+    else{
+        if(!checkInputNumbers(input_number,inicial_basis)){
+            alert("Caracteres digitados não são compatíveis com a base numérica escolhida")
+        }
+        else{
+            prepareConversion(input_number,inicial_basis,final_basis)
+        }
+    }
+
+    
+
+    
+ 
+}
+
+
+
+function prepareConversion(input_number,inicial_basis,final_basis){
+    let binary =""
+    let result =""
+    
+    switch(inicial_basis){
+        case "decimal":
+            binary=decimalToBinary(input_number)
+            break
+        case "hexadecimal":
+            binary=hexadecimalToBinary(input_number)
+            break
+        case "octal":
+            binary=octalToBinary(input_number)
+            break
+        default:
+            binary=input_number
+        
+    }
+
+
+    switch(final_basis){
+        case "decimal":
+            result = binaryToDecimal(binary)
+            break
+        case "hexadecimal":
+            result = binaryToHexadecimal(binary)
+            break
+        case "octal":
+            result = binaryToOctal(binary)
+            break
+        default:
+            result = binary
+            break
+    }
+
+    console.log(result)
+}
+
+
+
+
+
 //This function check if input number is compatible with numerical basis (use another functions to help)
 function checkInputNumbers(input_number,numerical_basis){
     if(numerical_basis=="binary"){
